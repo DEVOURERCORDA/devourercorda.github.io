@@ -1,0 +1,147 @@
+.footer {
+	font-size: 12px;
+    margin-top: 30px;
+
+    .nav {
+    float: left;
+    line-height: 1.833333333;
+    margin: 0 10px 16px 0;
+
+    li {
+    float: left;
+    margin-right: 30px;
+	}
+
+	a {
+    color: #006ea5;
+    display: block;
+    font-weight: bold;
+	}
+}
+
+}
+
+.email-signup-login-footer {
+	background: #000;
+    color: #ccc;
+    padding-bottom: 1.53061225%;
+    padding-top: 1.53061225%;
+}
+
+.email-signup-login-footer {
+	margin-left: 0;
+
+	p {
+		@media only screen and (max-width: 1000px) {
+			line-height: 20px;
+		}
+		font-size: 15px;
+    	line-height: 35px;
+    	padding-left: 5px;
+   		float: left;
+	}
+
+	a.btn {
+			background-color: #d55c19;
+    		border: none;
+    		-webkit-appearance: none;
+    		-moz-appearance: none;
+   			border-radius: 0;
+
+   			margin-left: 10px;
+	}
+}
+
+.login-footer {
+	@media only screen and (max-width:640px) {
+		clear:both;
+		padding-top:20px;
+	}
+}
+
+.gutter-horiz-in {
+	@media only screen and (max-width:767px) {
+		padding-left: 3.06%;
+		padding-right:3.06%;
+	}
+    padding-left: 1.53061225%;
+    padding-right: 1.53061225%;
+}
+
+.gutter-bottom-in-fixed-4 {
+    padding-bottom: 40px;
+}
+
+.gutter-top-in-fixed-3 {
+    padding-top: 30px;
+}
+
+.logo {
+	@media only screen and (max-width:640px) {
+		display: none;
+	}
+    background: #fff url('../../public/images/logo-footer.png') no-repeat 50% 14px;
+    float: right;
+    height: 110px;
+    margin-bottom: 16px;
+    width: 84px;
+}
+
+.address {
+    clear: left;
+    font-size: 13px;
+    margin: 30px 0;
+}
+
+.nav-social {
+    margin: 0 0 30px -10px;
+
+    li {
+    margin-right: 8px;
+	}
+
+	a {
+		height: 40px;
+    	margin: -10px 0;
+    	overflow: hidden;
+    	width: 40px;
+	}
+
+	.ico {
+	    display: block;
+	    font-size: 24px;
+	    line-height: 36px;
+	    text-align: center;
+	}
+
+	.ico-facebook {
+	    color: #3e559c;
+	    font-size: 30px;
+	    line-height: 34px;
+	}
+
+	.ico-twitter {
+    color: #2acaff;
+	}
+
+	.ico-instagram {
+		color: #306992;
+    	line-height: 44px;
+	}
+
+	.ico-youtube {
+		color: #ce280d;
+	    font-size: 36px;
+	    line-height: 26px;
+	}
+
+	.ico-rss {
+		color: #f98e04;
+	}
+}
+
+.copyright {
+    clear: left;
+    color: #9d9c9c;
+}
+
