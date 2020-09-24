@@ -1,0 +1,49 @@
+ /* ------------------------------NULL------------------------------ */
+* {
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+}
+a,
+a:visited,
+a:hover {
+	text-decoration: none;
+}
+ul li {
+	list-style: none;
+}
+:focus,
+:active {
+	outline: none;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-style: inherit;
+    font-weight: inherit;
+}
+/* ------------------------------FONTS------------------------------ */
+@font-face {
+    font-family: "Gotham";
+    src: url(assets/fonts/GOTHAMSSM-MEDIUM.OTF);
+    font-style: normal;
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Gotham";
+    src: url(assets/fonts/GOTHAMSSM-BOLD.OTF);
+    font-style: normal;
+    font-weight: 700;
+}
+@font-face {
+    font-family: "Gotham";
+    src: url(assets/fonts/GOTHAMSSM-BLACK.OTF);
+    font-style: normal;
+    font-weight: 900;
+}
+@font-face {
+    font-family: "Gotham";
+    src: url(assets/fonts/GOTHAMSSM-XLIGHT.OTF);
+    font-style: italic;
+    font-weight: 100;
+}
+/* ------------------------------MAIN------------------------------ */
+
