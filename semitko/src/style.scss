@@ -91,12 +91,12 @@ input[type="name"] {
     line-height: 60px;
 }
 .header__item {
-    flex: 1 1 calc(50%);
-    margin-right: 60px;
+    flex: 0 1 50%;
 }
 .header__title-box {
     @include flexbox();
     align-items: flex-end;
+    margin-right: 60px;
 }
 .header__title {
     height: 120px;
@@ -106,11 +106,13 @@ input[type="name"] {
         height: 110px;
     }
 }
+.visit {
+    display: flex;
+    justify-content: flex-end;
+}
 .header__visit {
-    padding-left: 100px;
     padding-top: 4px;
-    margin: 0;
-    flex-direction: row-reverse;
+    // flex-direction: row-reverse;
 }
 .personal-info{
     border: 2px solid #000;
@@ -157,6 +159,8 @@ input[type="name"] {
         height: 30px;
         width: 350px;
         border: none;
+        font-size: 25px;
+        font-weight: 100;
         border-bottom: 1px dashed #000;
         border-radius: 0%;
         position: absolute;
@@ -205,6 +209,7 @@ input[type="name"] {
 .needs {
     width: 100%;
     height: 100%;
+    resize: none;
 }
 .column {
     flex: 0 0 50%;
@@ -219,6 +224,7 @@ input[type="name"] {
     display: flex;
     justify-content: space-between;
     padding-right: 90px;
+    align-items: center;
     .custom + label {
         align-items: flex-start;
     }
