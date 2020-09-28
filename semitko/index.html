@@ -6,23 +6,39 @@
     <link rel="stylesheet" href="src/style.css">
     <title>Анкета</title>
     <script>
+        function deleteClass (fr) {
+            let bl = document.getElementById("borderless");
+            fr = document.getElementById(fr);
+            if (fr.checked) bl.classList.add("borderless");
+            else bl.classList.remove("borderless");
+        }
         function showOrHide(id, el) {
           id = document.getElementById(id);
-          el = document.getElementById(el);
-          let borderless = document.getElementById("borderless"); 
-          if (id.checked) el.style.display = "block", borderless.classList.remove("borderless");
-          else el.style.display = "none", borderless.classList.add("borderless");
+          el = document.getElementById(el); 
+          if (id.checked) el.style.display = "block";
+          else el.style.display = "none";
         }
         function maleTofemale () {
-            let spouseGender = document.getElementById("s-female");
+            let sg1 = document.getElementById("s-male");
+            let sg2 = document.getElementById("s-female")
             let gender = document.getElementById("male");
+            let married = document.getElementsByClassName("married")[0];
             let spouse0 = document.getElementsByClassName("spouse")[0];
             let spouse1 = document.getElementsByClassName("spouse")[1];
             let spouse2 = document.getElementsByClassName("spouse")[2];
-            if (gender.checked) spouseGender.getAttribute("checked"), spouse0.innerHTML = "Супруга", spouse1.innerHTML = "Я поднял руку,<br> потому что", spouse2.innerHTML = "я отдал жизнь<br> Иисусу впервые";
-            else spouse.innerHTML = "Супруг", spouse1.innerHTML = "Я подняла руку,<br> потому что", spouse2.innerHTML = "я отдала жизнь<br> Иисусу впервые";
+            if (gender.checked) spouse0.innerHTML = "Супруга",
+            sg1.removeAttribute("checked"),
+            sg2.setAttribute("checked", "true"),
+            married.innerHTML = "женат", 
+            spouse1.innerHTML = "Я поднял руку,<br> потому что", 
+            spouse2.innerHTML = "я отдал жизнь<br> Иисусу впервые";
+            else spouse0.innerHTML = "Супруг",
+            sg2.removeAttribute("checked"),
+            sg1.setAttribute("checked", "true"),
+            married.innerHTML = "замужем",
+            spouse1.innerHTML = "Я подняла руку,<br> потому что", 
+            spouse2.innerHTML = "я отдала жизнь<br> Иисусу впервые";
         }
-        
       </script>
 </head>
 <body>
@@ -74,24 +90,24 @@
                             <label for="district">Ваш район <br>в городе</label><input type="text" name="district" id="district" required>
                         </div>
                     </div>
-                    <div id="borderless" class="row">
+                    <div id="borderless" class="row borderless">
                         <div class="row__item">
                             <p>Семейное положение</p>
-                            <input class="custom" type="radio" name="marital-status" id="free" value="free" required onchange = 'showOrHide("married", "spouse-info");'>
+                            <input class="custom" type="radio" name="marital-status" id="free" value="free" required onchange = 'deleteClass ("free"); showOrHide("married", "spouse-info"); '>
                             <label for="free">не состою в браке</label>
                         </div>
                         <div class="row__item ">
-                            <input class="custom" type="radio" name="marital-status" id="married" value="married" onchange = 'showOrHide("married", "spouse-info");'>
-                            <label for="married">женат/замужем</label>
+                            <input class="custom" type="radio" name="marital-status" id="married" value="married" onchange = 'showOrHide("married", "spouse-info"); deleteClass ("free");'>
+                            <label class="married" for="married">женат/замужем</label>
                         </div>
                     </div>
-                    <div id="spouse-info">
+                    <div id="spouse-info" style="display: none;">
                         <div class="row">
                             <div class="row__item">
-                                <label class="spouse" for="spouse" onchange = 'maleTofemale("male", "spouse");'>Супруг(а)</label><input type="text" name="spouse-name" id="spouse">
+                                <label class="spouse" for="spouse">Супруг(а)</label><input type="text" name="spouse-name" id="spouse">
                             </div>
                             <div class="row__item">
-                                <input class="custom" type="radio" name="spouse-gender" id="s-male" value="male"><label for="s-male">М</label>
+                                <input class="custom" type="radio" name="spouse-gender" id="s-male" value="male" onchange = 'maleTofemale();'><label for="s-male">М</label>
                                 <input class="custom" type="radio" name="spouse-gender" id="s-female" value="female" onchange = 'maleTofemale();'><label for="s-female">Ж</label>
                                 <label for="birthday">Дата<br>Рождения</label><input type="date" name="spouse-birthday" id="s-birthday">
                             </div>
