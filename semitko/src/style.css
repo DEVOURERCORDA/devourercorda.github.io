@@ -201,6 +201,9 @@ input[type="text"],
 input[type="date"],
 input[type="tel"],
 input[type="email"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   border: 1px solid #000;
   border-radius: 0.3em;
   height: 50px;
@@ -434,13 +437,12 @@ input[type="email"] {
 }
 
 #another-2 {
-  height: 30px;
+  height: 50px;
   width: 300px;
   border: none;
   font-weight: 100;
   border-bottom: 1px dashed #000;
   border-radius: 0%;
-  margin-bottom: 10px;
 }
 
 .complete-btns {
@@ -454,6 +456,9 @@ input[type="email"] {
 }
 
 .btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   margin: 0 20px;
   background-color: #fff;
   border: 1px solid #000;
