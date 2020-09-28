@@ -339,7 +339,8 @@ input[type="email"] {
   bottom: calc(50% + 10px);
 }
 
-.hand-up {
+.hand-up,
+.home-group {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: start;
@@ -351,6 +352,18 @@ input[type="email"] {
 
 .hand-up label {
   margin-right: 45px;
+}
+
+.home-group p {
+  margin-right: 105px;
+}
+
+.home-group label {
+  margin-right: 105px;
+}
+
+.home-group label:nth-of-type(2) {
+  margin-right: 95px;
 }
 
 .column {
@@ -480,5 +493,9 @@ input[type="email"] {
 .btn-submit:hover {
   background-color: #0b76ef;
   color: #fff;
+}
+
+.spouse-info {
+  display: none;
 }
 /*# sourceMappingURL=style.css.map */

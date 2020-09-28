@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=1554 initial-scale=1 maximum-scale=1">
     <link rel="stylesheet" href="src/style.css">
     <title>Анкета</title>
+    <script>
+        function showOrHide(id, el) {
+          id = document.getElementById(id);
+          el = document.getElementById(el);
+          let borderless = document.getElementById("borderless"); 
+          if (id.checked) el.style.display = "block", borderless.classList.remove("borderless");
+          else el.style.display = "none", borderless.classList.add("borderless");
+        }
+        function maleTofemale () {
+            let spouseGender = document.getElementById("s-female");
+            let gender = document.getElementById("male");
+            let spouse0 = document.getElementsByClassName("spouse")[0];
+            let spouse1 = document.getElementsByClassName("spouse")[1];
+            let spouse2 = document.getElementsByClassName("spouse")[2];
+            if (gender.checked) spouseGender.getAttribute("checked"), spouse0.innerHTML = "Супруга", spouse1.innerHTML = "Я поднял руку,<br> потому что", spouse2.innerHTML = "я отдал жизнь<br> Иисусу впервые";
+            else spouse.innerHTML = "Супруг", spouse1.innerHTML = "Я подняла руку,<br> потому что", spouse2.innerHTML = "я отдала жизнь<br> Иисусу впервые";
+        }
+        
+      </script>
 </head>
 <body>
     <div class="wrapper">
@@ -34,8 +53,8 @@
                             <input type="text" id="name" name="name" required>
                         </div>
                         <div class="row__item">
-                            <input required class="custom" type="radio" name="gender" id="male" value="male"><label for="male">М</label>
-                            <input class="custom" type="radio" name="gender" id="female" value="female"><label for="female">Ж</label>
+                            <input required class="custom mtf" type="radio" name="gender" id="male" value="male" onchange = 'maleTofemale();'><label for="male">М</label>
+                            <input class="custom mtf" type="radio" name="gender" id="female" value="female" onchange = 'maleTofemale();'><label for="female">Ж</label>
                             <label for="birthday">Дата<br>Рождения</label><input type="date" name="birthday" id="birthday" required>
                         </div>
                     </div>
@@ -58,22 +77,22 @@
                     <div id="borderless" class="row">
                         <div class="row__item">
                             <p>Семейное положение</p>
-                            <input class="custom" type="radio" name="marital-status" id="free" value="free" required>
+                            <input class="custom" type="radio" name="marital-status" id="free" value="free" required onchange = 'showOrHide("married", "spouse-info");'>
                             <label for="free">не состою в браке</label>
                         </div>
                         <div class="row__item ">
-                            <input class="custom" type="radio" name="marital-status" id="married" value="married">
+                            <input class="custom" type="radio" name="marital-status" id="married" value="married" onchange = 'showOrHide("married", "spouse-info");'>
                             <label for="married">женат/замужем</label>
                         </div>
                     </div>
                     <div id="spouse-info">
                         <div class="row">
                             <div class="row__item">
-                                <label for="spouse">Супруг(а)</label><input type="text" name="spouse-name" id="spouse">
+                                <label class="spouse" for="spouse" onchange = 'maleTofemale("male", "spouse");'>Супруг(а)</label><input type="text" name="spouse-name" id="spouse">
                             </div>
                             <div class="row__item">
                                 <input class="custom" type="radio" name="spouse-gender" id="s-male" value="male"><label for="s-male">М</label>
-                                <input class="custom" type="radio" name="spouse-gender" id="s-female" value="female"><label for="s-female">Ж</label>
+                                <input class="custom" type="radio" name="spouse-gender" id="s-female" value="female" onchange = 'maleTofemale();'><label for="s-female">Ж</label>
                                 <label for="birthday">Дата<br>Рождения</label><input type="date" name="spouse-birthday" id="s-birthday">
                             </div>
                         </div>
@@ -113,17 +132,20 @@
                 </div>
                 <div class="group">
                     <div class="row">
-                        <div class="row__item">
+                        <div class="row__item home-group">
                             <p>Вы посещаете <br> домашнюю группу?</p>
-                            <input class="custom" type="radio" name="home-group" id="yes" value="yes" required><label for="yes">да, посещаю</label>
-                            <input class="custom" type="radio" name="home-group" id="no" value="no"><label for="no">нет, не посещаю</label>
-                            <label for="group-leader-name">Моего лидера домашней группы<br> зовут</label><input class="group-leader" type="text" name="group-leader-name" id="group-leader-name">
+                            <input class="custom" type="radio" name="home-group" id="yes" value="yes" required onchange = 'showOrHide("yes", "glp");'><label for="yes" >да, посещаю</label>
+                            <input class="custom" type="radio" name="home-group" id="no" value="no" onchange = 'showOrHide("yes", "glp");'><label for="no">нет, не посещаю</label>
+                            <div id="glp">
+                                <label for="group-leader-name">Моего лидера домашней группы<br> зовут</label><input class="group-leader" type="text" name="group-leader-name" id="group-leader-name">
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="row">
                         <div class="row__item hand-up">
-                            <p>Я поднял(а) руку,<br> потому что</p>
-                            <input class="custom" type="radio" id="gave-life" name="hand-up" value="gave-life"><label for="gave-life">я отдал(а) жизнь<br> Иисусу впервые</label>
+                            <p class="spouse" style="width: 237px;">Я поднял(а) руку,<br> потому что</p>
+                            <input class="custom" type="radio" id="gave-life" name="hand-up" value="gave-life"><label class="spouse" for="gave-life">я отдал(а) жизнь<br> Иисусу впервые</label>
                             <input class="custom" type="radio" id="renew-your-penance" name="hand-up" value="renew-your-penance"><label for="renew-your-penance">желаю обновить<br> покаяние</label>
                         </div>
                         <!-- <div class="row__item"></div> -->
@@ -209,6 +231,7 @@
                 </div>
             </div>
         </form>
-    </div>   
+    </div>  
+        
 </body>
 </html>

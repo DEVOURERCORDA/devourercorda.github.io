@@ -170,13 +170,29 @@ input[type="email"] {
         bottom: calc(50% + 10px);
     }
 }
-.hand-up {
+.hand-up,
+.home-group {
     justify-content: start;
+}
+
+.hand-up {
     p {
         margin-right: 137px;
     }
     label {
         margin-right: 45px;
+    }
+}
+
+.home-group {
+    p {
+        margin-right: 105px;
+    }
+    label {
+        margin-right: 105px;
+        &:nth-of-type(2) {
+            margin-right: 95px;
+        }
     }
 }
 .column {
@@ -271,3 +287,6 @@ input[type="email"] {
     color: #fff;
 }
 
+.spouse-info {
+    display: none;
+}
