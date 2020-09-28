@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1554 initial-scale=1 maximum-scale=1">
+    <!-- <meta name="viewport" content="width=1554 initial-scale=1 maximum-scale=1"> -->
     <link rel="stylesheet" href="src/style.css">
     <title>Анкета</title>
 </head>
@@ -89,23 +89,23 @@
                         <div class="row">
                             <div class="row__item">
                                 <label for="child-name1">Имя ребёнка</label>
-                                <input type="text" id="сhild-name1" name="сhild-name1">
+                                <input type="text" id="child-name1" name="сhild1-name">
                             </div>
                             <div class="row__item">
                                 <input class="custom" type="radio" name="сhild-gender1" id="сhild-male1" value="male"><label for="сhild-male1">М</label>
                                 <input class="custom" type="radio" name="сhild-gender1" id="сhild-female1" value="female"><label for="сhild-female1">Ж</label>
-                                <label for="child-birthday1">Дата<br>Рождения</label><input type="date" name="child-birthday1" id="сhild-birthday1">
+                                <label for="сhild-birthday1">Дата<br>Рождения</label><input type="date" name="child-birthday1" id="сhild-birthday1">
                             </div>
                         </div>
                         <div class="row borderless">
                             <div class="row__item">
                                 <label for="child-name2">Имя ребёнка</label>
-                                <input type="text" id="сhild-name2" name="child-name2">
+                                <input type="text" id="child-name2" name="child-name2">
                             </div>
                             <div class="row__item">
                                 <input class="custom" type="radio" name="сhild-gender2" id="сhild-male2" value="male"><label for="сhild-male2">М</label>
                                 <input class="custom" type="radio" name="сhild-gender2" id="сhild-female2" value="female"><label for="сhild-female2">Ж</label>
-                                <label for="birthday">Дата<br>Рождения</label><input type="date" name="birthday" id="с2_birthday">
+                                <label for="сhild-birthday2">Дата<br>Рождения</label><input type="date" name="сhild-birthday2" id="сhild-birthday2">
                             </div>
                         </div>
                     </div>
@@ -178,9 +178,10 @@
                     <div class="column">
                         <div class="column__item">
                             <h2 class="title">Как Вы узнали о Церкви 180?</h2>
-                            <input class="custom" type="radio" name="" id=""><label for="">От друзей/родственников</label>
-                            <input class="custom" type="radio" name="" id=""><label for="">Через социальные сети</label><br>
-                            <input class="custom" type="radio" name="" id=""><label for="">Другое</label>
+                            <input class="custom" type="radio" name="how-did-you-find" id="friends" value="friends"><label for="friends">От друзей/родственников</label>
+                            <input class="custom" type="radio" name="how-did-you-find" id="socials" value="socials"><label for="socials">Через социальные сети</label><br>
+                            <input class="custom" type="radio" name="how-did-you-find" id="another" value="another"><label for="another">Другое</label>
+                            <input type="text" class="another" name="another" id="another-2">
                         </div>
                         <div class="column__item jcsb">
                             <h2 class="title">Хотите пройти базовое <br> обучение «Level Up»? </h2>
@@ -202,8 +203,9 @@
                         <input class="custom" type="checkbox" name="more-info" id="meetings-for-men" value="meetings-for-men"><label for="meetings-for-men">Встречах для мужчин</label>
                     </div>
                 </div>
-                <div class="row submit">
-                    <input type="submit">
+                <div class="complete-btns">
+                    <input class="btn btn-reset" type="reset">
+                    <input class="btn btn-submit" type="submit">
                 </div>
             </div>
         </form>
