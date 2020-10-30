@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=1554, initial-scale=0.25, minimum-scale=0.25, maximum-scale=1">
+    <meta name="viewport" content="width=1564, initial-scale=0.25, minimum-scale=0.25, maximum-scale=1">
     <link rel="stylesheet" href="src/style.css">
     <title>Анкета</title>
     <script>
@@ -22,28 +22,30 @@
             let sg1 = document.getElementById("s-male");
             let sg2 = document.getElementById("s-female")
             let gender = document.getElementById("male");
+            let m = document.getElementById("mr");
             let married = document.getElementsByClassName("married")[0];
             let spouse0 = document.getElementsByClassName("spouse")[0];
             let spouse1 = document.getElementsByClassName("spouse")[1];
             let spouse2 = document.getElementsByClassName("spouse")[2];
             if (gender.checked) spouse0.innerHTML = "Супруга",
-            sg1.removeAttribute("checked"),
-            sg2.setAttribute("checked", "true"),
             married.innerHTML = "женат", 
             spouse1.innerHTML = "Я поднял руку,<br> потому что", 
-            spouse2.innerHTML = "я отдал жизнь<br> Иисусу впервые";
+            spouse2.innerHTML = "я отдал жизнь<br> Иисусу впервые",
+            m.classList.add("m");
             else spouse0.innerHTML = "Супруг",
-            sg2.removeAttribute("checked"),
-            sg1.setAttribute("checked", "true"),
             married.innerHTML = "замужем",
             spouse1.innerHTML = "Я подняла руку,<br> потому что", 
-            spouse2.innerHTML = "я отдала жизнь<br> Иисусу впервые";
+            spouse2.innerHTML = "я отдала жизнь<br> Иисусу впервые",
+            m.classList.add("m");
+        }
+        function alert() {
+            alert("Спасибо")
         }
       </script>
 </head>
 <body>
     <div class="wrapper">
-        <form action="#" method="GET">
+        <form action="#" method="POST" onsubmit="alert('Спасибо!')">
             <div class="container">
                 <div class="header">
                     <div class="header__item header__title-box">
@@ -107,8 +109,6 @@
                                 <label class="spouse" for="spouse">Супруг(а)</label><input type="text" name="spouse-name" id="spouse">
                             </div>
                             <div class="row__item">
-                                <input class="custom" type="radio" name="spouse-gender" id="s-male" value="male" onchange = 'maleTofemale();'><label for="s-male">М</label>
-                                <input class="custom" type="radio" name="spouse-gender" id="s-female" value="female" onchange = 'maleTofemale();'><label for="s-female">Ж</label>
                                 <label for="birthday">Дата<br>Рождения</label><input type="date" name="spouse-birthday" id="s-birthday">
                             </div>
                         </div>
@@ -160,9 +160,9 @@
                     </div>
                     <div class="row">
                         <div class="row__item hand-up">
-                            <p class="spouse" style="width: 237px;">Я поднял(а) руку,<br> потому что</p>
+                            <p class="spouse" style="width: 237px;" >Я поднял(а) руку,<br> потому что</p>
                             <input class="custom" type="radio" id="gave-life" name="hand-up" value="gave-life"><label class="spouse" for="gave-life">я отдал(а) жизнь<br> Иисусу впервые</label>
-                            <input class="custom" type="radio" id="renew-your-penance" name="hand-up" value="renew-your-penance"><label for="renew-your-penance">желаю обновить<br> покаяние</label>
+                            <input class="custom" type="radio" id="renew-your-penance" name="hand-up" value="renew-your-penance"><label id="mr" for="renew-your-penance">желаю обновить<br> покаяние</label>
                         </div>
                         <!-- <div class="row__item"></div> -->
                     </div>
