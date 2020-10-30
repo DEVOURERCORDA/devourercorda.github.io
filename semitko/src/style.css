@@ -346,6 +346,10 @@ input[type="email"] {
           justify-content: start;
 }
 
+.hand-up .m {
+  margin-left: 8px;
+}
+
 .hand-up p {
   margin-right: 137px;
 }
